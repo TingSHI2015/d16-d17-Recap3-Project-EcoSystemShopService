@@ -21,4 +21,18 @@ public class ShopService {
 
         return orderRepo.addOrder(newOrder);
     }
+
+
+    //Ting's code! But teacherDaniel put this method-name in Interface & than in OrderListRepo the method override!
+/*    public List<Order> getAllOrdersByOrderStatus(OrderStatus status){
+        return orderRepo.getOrders().stream()
+                .filter(order -> order.status()==status)
+                .toList();
+
+    }*/
+
+    //TeacherDaniel's code! Much better in complex project!
+    public List<Order> getAllOrderByOrderStatus(OrderStatus status){
+        return orderRepo.getAllOrderByOrderStatus(status);
+    }
 }
